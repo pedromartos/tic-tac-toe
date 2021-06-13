@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -85,21 +86,79 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@font-face {
+  font-family: "Starjedi";
+  src: url("../fonts/Starjedi.eot");
+  src: local("☺"), url("../fonts/Starjedi.woff") format("woff"), url("../fonts/Starjedi.ttf") format("truetype"), url("../fonts/Starjedi.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 main {
   display: flex;
+  min-width: 900px;
   width: 100vw;
   height: 100vh;
   justify-content: stretch;
+  font-family: "Starjedi";
 }
 
 main h1,
-main h2 {
+main h2,
+main h3 {
   text-align: center;
+  font-weight: normal;
+  color: #ffe81f;
+}
+
+main h1 {
+  background-color: black;
+  margin: 0;
+  padding: 48px 0 49px;
 }
 
 main .player {
-  background-color: teal;
+  background-color: black;
   width: 25vw;
+}
+
+main .player .img {
+  background-color: #fff;
+  padding: 20px 0;
+}
+
+main .player .img img {
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+main .player .wins {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  overflow: auto;
+  height: 66vh;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+main .player .wins li {
+  width: 27%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fff;
+  padding: 5px 0;
+  margin: 3.15%;
+  border-radius: 3px;
+}
+
+main .player .wins li img, main .player .wins li span {
+  width: 25px;
+  height: 25px;
+  margin: 1px;
+  display: block;
 }
 
 main .board {
@@ -110,14 +169,63 @@ main .board > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 50px;
 }
 
 main .board > div button {
-  width: 16vw;
-  height: 16vw;
+  width: 13vw;
+  height: 13vw;
   margin: 0;
   padding: 0;
-  border: 0.2vw solid #fff;
+  border: 0.2vw solid #000;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+}
+
+main .board > div button:nth-child(1) {
+  border-top-color: #fff;
+  border-left-color: #fff;
+}
+
+main .board > div button:nth-child(2) {
+  border-top-color: #fff;
+}
+
+main .board > div button:nth-child(3) {
+  border-top-color: #fff;
+  border-right-color: #fff;
+}
+
+main .board > div button:nth-child(4) {
+  border-left-color: #fff;
+}
+
+main .board > div button:nth-child(6) {
+  border-right-color: #fff;
+}
+
+main .board > div button:nth-child(7) {
+  border-bottom-color: #fff;
+  border-left-color: #fff;
+}
+
+main .board > div button:nth-child(8) {
+  border-bottom-color: #fff;
+}
+
+main .board > div button:nth-child(9) {
+  border-bottom-color: #fff;
+  border-right-color: #fff;
+}
+
+main .board > div button.rebel {
+  background-image: url(../img/rebel.svg);
+}
+
+main .board > div button.empire {
+  background-image: url(../img/empire.svg);
 }
 
 /* ==========================================================================
