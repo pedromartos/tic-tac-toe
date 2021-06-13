@@ -97,7 +97,6 @@ textarea {
 main {
   display: flex;
   min-width: 900px;
-  width: 100vw;
   height: 100vh;
   justify-content: stretch;
   font-family: "Starjedi";
@@ -119,7 +118,7 @@ main h1 {
 
 main .player {
   background-color: black;
-  width: 25vw;
+  width: 25%;
 }
 
 main .player .img {
@@ -141,17 +140,23 @@ main .player .wins {
   height: 66vh;
   align-items: flex-start;
   align-content: flex-start;
+  justify-content: space-around;
 }
 
 main .player .wins li {
+  min-width: 100px;
   width: 27%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   background-color: #fff;
   padding: 5px 0;
-  margin: 3.15%;
+  margin: 5px 0;
   border-radius: 3px;
+}
+
+main .player .wins li.empty {
+  background-color: transparent;
 }
 
 main .player .wins li img, main .player .wins li span {
@@ -162,10 +167,11 @@ main .player .wins li img, main .player .wins li span {
 }
 
 main .board {
-  width: 50vw;
+  width: 50%;
 }
 
 main .board > div {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -173,6 +179,8 @@ main .board > div {
 }
 
 main .board > div button {
+  min-width: 125px;
+  min-height: 125px;
   width: 13vw;
   height: 13vw;
   margin: 0;

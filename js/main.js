@@ -27,11 +27,26 @@ const updateWins = function() {
 }
 const displayWins = function(player, el) {
   el.querySelector(".wins").innerHTML = "";
+  const wins = player.getWins();
 
-  for (let j = 0; j < player.getWins().length; j++) {
-    const win = player.getWins()[j];
-    const board = buildBoard(win);
-    el.querySelector(".wins").appendChild(board);
+  if (wins.length % 3 != 0) {
+    fill = 3 - (wins.length % 3);
+    for (let i = 0; i < fill; i++) {
+      wins.push(null);
+    }
+  }
+
+  for (let j = 0; j < wins.length; j++) {
+    const win = wins[j];
+
+    if (win == null) {
+      const empty = document.createElement("LI")
+      empty.classList.add("empty");
+      el.querySelector(".wins").appendChild(empty);
+    } else {
+      const board = buildBoard(win);
+      el.querySelector(".wins").appendChild(board);
+    }
   }
 }
 
